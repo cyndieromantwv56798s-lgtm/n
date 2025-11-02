@@ -41,4 +41,4 @@ jobs:
       - name: Run DNS task (Instance #${{ matrix.instance }})
         run: |
           echo "Starting instance ${{ matrix.instance }}"
-          python3 start.py "${{ github.event.inputs.methd }}" "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 899 "${{ github.event.inputs.time }}"
+          python3 start.py "${{ github.event.inputs.methd }}" "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 447 "${{ github.event.inputs.time }}"
