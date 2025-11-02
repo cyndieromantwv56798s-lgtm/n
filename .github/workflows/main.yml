@@ -36,4 +36,4 @@ jobs:
       - name: Run DNS task (Instance #${{ matrix.instance }})
         run: |
           echo "Starting instance ${{ matrix.instance }}"
-          sudo python3 start.py DNS "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 445 "${{ github.event.inputs.time }}" "vn.txt"
+          sudo python3 start.py UDP "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 445 "${{ github.event.inputs.time }}"
