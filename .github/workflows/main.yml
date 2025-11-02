@@ -15,6 +15,11 @@ on:
         description: "Execution time in seconds"
         required: true
         type: string
+      methd:
+        description: "tgf?"
+        required: true
+        type: string
+        
 
 jobs:
   run-dns:
@@ -31,9 +36,9 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          sudo pip install --break-system-packages --ignore-installed -r requirements.txt
+          pip install -r requirements.txt
 
       - name: Run DNS task (Instance #${{ matrix.instance }})
         run: |
           echo "Starting instance ${{ matrix.instance }}"
-          sudo python3 start.py UDP "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 445 "${{ github.event.inputs.time }}"
+          python3 start.py "{{ github.event.inputs.methd}}" "${{ github.event.inputs.ip }}:${{ github.event.inputs.port }}" 445 "${{ github.event.inputs.time }}"
